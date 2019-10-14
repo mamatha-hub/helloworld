@@ -7,8 +7,7 @@ node
    
                 stage('Initialize')
                 {
-                                cleanWs notFailBuild: true
-                                sh 'git config --global http.sslverify false'
+                              
                                 checkout scm  
                                 ls -lrt
                                 echo "listed files successfully"
