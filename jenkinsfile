@@ -1,0 +1,23 @@
+def props = '' 
+def buildNumber    = env.BUILD_NUMBER
+def UPLOADVERSION = ''
+node
+{ 
+
+   
+                stage('Initialize')
+                {
+                                cleanWs notFailBuild: true
+                                sh 'git config --global http.sslverify false'
+                                checkout scm  
+                                ls -lrt
+                                echo "listed files successfully"
+                                                
+      
+                }
+                stage('Build')
+                {
+                mvn clean install
+                }
+  
+}
