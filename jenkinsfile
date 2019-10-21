@@ -1,6 +1,7 @@
 pipeline {
     agent {
         docker {
+            label 'jenkins_slave'
             image 'maven:3-alpine'
             args '-v /root/.m2:/root/.m2'
         }
