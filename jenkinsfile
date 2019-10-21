@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        
+        label 'jenkins_slave'
         docker {
             
             image 'maven:3-alpine'
