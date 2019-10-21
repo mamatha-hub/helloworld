@@ -1,22 +1,15 @@
-def props = '' 
-def buildNumber    = env.BUILD_NUMBER
-def UPLOADVERSION = ''
-node
-{ 
-
-   
-                stage('Initialize')
-                {
-                              
-                                checkout scm  
-                                ls -lrt
-                                echo "listed files successfully"
-                                                
-      
-                }
-                stage('Build')
-                {
-                mvn clean install
-                }
-  
-}
+pipeline {
+    agent {
+        docker {
+            image 'maven:3-alpine'
+            args '-v /root/.m2:/root/.m2'
+        }
+    }
+     stages {
+        stage('Build') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
+        }
+        }
