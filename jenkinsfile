@@ -16,7 +16,9 @@ pipeline {
       steps {
         container('dockerimage') {
           sh """ docker login -u demodocker12 -p renmameth@12
-          docker build -t demodocker12/mavenimage1 . """
+          docker build -t demodocker12/mavenimage1 . 
+          docker push demodocker12/mavenimage1
+          """
         }
       }
     }
