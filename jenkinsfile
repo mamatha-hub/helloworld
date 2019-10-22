@@ -4,7 +4,7 @@ pipeline {
         
         docker {
              
-            image 'maven:3-alpine'
+            image 'maven:latest'
             label 'jenkins_slave'
             args '-v /root/.m2:/root/.m2'
             
