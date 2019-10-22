@@ -3,7 +3,7 @@ pipeline {
     agent {
         
         docker {
-            
+             
             image 'maven:3-alpine'
             label 'jenkins_slave'
             args '-v /root/.m2:/root/.m2'
@@ -11,10 +11,9 @@ pipeline {
         }
     }
      stages {
-        stage('Build') {
-         agent { label 'jenkins_slave' }
+        stage('Build') {         
             steps {
-                sh 'mvn clean install'
+                sh 'mvn clean package'
             }
         }
         }
