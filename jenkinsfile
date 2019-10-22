@@ -1,7 +1,7 @@
 pipeline {
 
     agent { 
-    label 'jenkins_slave
+    label 'jenkins_slave'
     sh 'sudo apt install docker.io'
     
         
