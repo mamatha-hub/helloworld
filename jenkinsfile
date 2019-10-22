@@ -12,5 +12,13 @@ pipeline {
         }
       }
     }
+    stage('BuildImage') {
+      steps {
+        container('dockerimage') {
+          sh """ docker login -u demodocker12 -p renmameth@12
+          docker build -t demodocker12/mavenimage1 . """
+        }
+      }
+    }
     }
     }
