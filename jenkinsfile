@@ -1,17 +1,11 @@
 pipeline {
 
-    agent { 
-    
-        
-        docker {
+    agent 
+    { 
             label 'jenkins_slave'
-            sh 'sudo apt install docker.io'    
-            image 'maven:latest'            
-            args '-v /root/.m2:/root/.m2'
-            
-        }
     }
      stages {
+    
         stage('Build') {         
             steps {
                 sh 'mvn clean package'
