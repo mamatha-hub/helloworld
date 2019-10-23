@@ -27,6 +27,10 @@ pipeline {
       container('kubectl') {
         sh """ kubectl get pods 
         kubectl apply -f appache-deployment.yaml
+        kubectl get pods
+        kubectl apply -f appache-service.yaml
+        kubectl get services
+        sleep 30
         """
       }
       }
