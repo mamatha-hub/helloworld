@@ -35,6 +35,10 @@ pipeline {
       }
       }
     }
+    stage ("wait_prior_starting_smoke_testing") {
+   
+    sleep 30
+}
     
     }
     }
