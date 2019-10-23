@@ -30,15 +30,11 @@ pipeline {
         kubectl get pods
         kubectl apply -f appache-service.yaml
         kubectl get services
-        
+        sleep 30        
         """
       }
       }
     }
-    stage ("wait_prior_starting_smoke_testing") {
-   
-    sleep 30
-}
-    
+  
     }
     }
