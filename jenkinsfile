@@ -30,7 +30,7 @@ pipeline {
         kubectl get pods
         kubectl apply -f appache-service.yaml
         kubectl get services
-        sleep 30
+        
         """
       }
       }
