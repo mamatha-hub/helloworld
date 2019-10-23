@@ -25,7 +25,9 @@ pipeline {
     stage('Run kubectl') {
      steps {
       container('kubectl') {
-        sh "kubectl get pods"
+        sh """ kubectl get pods 
+        kubectl apply -f appache-deployment.yaml
+        """
       }
       }
     }
