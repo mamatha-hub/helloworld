@@ -30,6 +30,7 @@ pipeline {
         kubectl get pods
         kubectl apply -f appache-service.yaml
         kubectl get services
+        cat conf/tomcat-users.xml
         sleep 30        
         """
       }
